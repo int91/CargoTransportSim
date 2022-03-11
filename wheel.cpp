@@ -19,6 +19,12 @@ Wheel::Wheel(std::string name, uint32_t val, double ps, uint8_t sze, double mxDu
 	this->_durability = mxDur;
 }
 
+void Wheel::CalculateEfficiency()
+{
+	double eff = (this->_psi * 0.2) + (this->_durability * 1.0005) - (this->_wear * 1.2);
+	std::cout << eff << "\n";
+}
+
 double Wheel::GetPsi() { return this->_psi; }
 double Wheel::GetDurability() { return this->_durability; }
 double Wheel::GetWear() { return this->_wear; }

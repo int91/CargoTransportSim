@@ -6,6 +6,7 @@ Vehicle::Vehicle()
 	this->_name = "NO NAME SET";
 	this->_value = 0;
 	this->_wheels = std::vector<Wheel>();
+	this->_miles = 0;
 }
 
 Vehicle::Vehicle(Fueltank ft, std::string name, uint32_t val, int mxWheels, Wheel defWheel)
@@ -18,6 +19,13 @@ Vehicle::Vehicle(Fueltank ft, std::string name, uint32_t val, int mxWheels, Whee
 	this->_tank = ft;
 	this->_name = name;
 	this->_value = ft.GetValue() + val;
+	this->_miles = 0;
+}
+
+void Vehicle::DrainFuel(double miles)
+{
+	const double fuelToDrain = miles * DRAINRATE;
+	this->_tank.DrainTank(fuelToDrain);
 }
 
 std::string Vehicle::GetName()
@@ -32,7 +40,7 @@ Fueltank Vehicle::GetTank()
 
 Wheel* Vehicle::GetWheel(int index)
 {
-	for (int i = 0; i < this->_wheels.size(); i++)
+	for (size_t i = 0; i < this->_wheels.size(); i++)
 	{
 		if (i == index) return &this->_wheels[index];
 	}
