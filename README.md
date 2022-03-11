@@ -4,6 +4,12 @@ Cargo Transport Simulator is a game in which you run your own Cargo Logistics co
 Inspired by Euro Truck Simulator.
 
 ### Roadmap
+- [ ] Solo Experience
+  - [ ] Companies
+  - [ ] Drive Trucks Owned By Other Companies
+  - [ ] Buy Your Own Trucks
+  - [ ] Buy Cargo From Companies
+  - [ ] Sell Cargo To Companies
 - [ ] Truck Logistics
   - [ ] Hire Drivers
   - [ ] Upgrade Base Garage
