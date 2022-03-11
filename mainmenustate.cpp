@@ -8,7 +8,7 @@ MainMenuState::MainMenuState()
 void MainMenuState::Update()
 {
 	std::cout << "Cargo Transport Simulator\n----------------------------------------\n";
-	std::cout << "1.) New Game\n2.) Load Game\n3.) Quit";
+	std::cout << "1.) New Game\n2.) Load Game\n3.) Quit\n";
 
 	int input = GetInput();
 	if (input != NULL)
