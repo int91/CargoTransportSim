@@ -3,6 +3,9 @@ Cargo Transport Simulator is a game in which you run your own Cargo Logistics co
 
 Inspired by Euro Truck Simulator.
 
+## Goals
+The goals for this project is to make a true-to-life text-based Logistics Simulator in C++. No libraries, and must support old devices (Old Pentiums and AMD Cpu's).
+
 ### Roadmap
 - [ ] Solo Experience
   - [ ] Companies
