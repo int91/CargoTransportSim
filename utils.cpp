@@ -8,7 +8,7 @@ uint32_t GetDistance(uint32_t stX, uint32_t stY, uint32_t enX, uint32_t enY)
     return dist;
 }
 
-int GetDistance(Position& a, Position& b)
+int GetDistance(Position a, Position b)
 {
     int dist = lround(sqrt(pow(b.x - a.x, 2) + pow(b.y - a.y, 2)));
     return dist;
@@ -28,6 +28,11 @@ int GetInput()
         std::cin.ignore();
     }
     return NULL;
+}
+
+void ClearScr()
+{
+    std::cout << "\033[2J\033[1;1H";
 }
 
 double GetLiters(double gallons) { return gallons * LITERS; }

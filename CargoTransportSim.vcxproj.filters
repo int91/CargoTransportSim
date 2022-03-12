@@ -48,12 +48,6 @@
     <ClCompile Include="building.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="basegamestate.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="mainmenustate.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vehicle.h">
@@ -87,12 +81,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="position.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="basegamestate.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mainmenustate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

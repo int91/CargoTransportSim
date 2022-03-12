@@ -139,13 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="basegamestate.cpp" />
     <ClCompile Include="building.cpp" />
     <ClCompile Include="CargoTransportSim.cpp" />
     <ClCompile Include="city.cpp" />
     <ClCompile Include="fueltank.cpp" />
     <ClCompile Include="game.cpp" />
-    <ClCompile Include="mainmenustate.cpp" />
     <ClCompile Include="person.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="utils.cpp" />
@@ -154,12 +152,10 @@
     <ClCompile Include="wheel.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="basegamestate.h" />
     <ClInclude Include="building.h" />
     <ClInclude Include="city.h" />
     <ClInclude Include="fueltank.h" />
     <ClInclude Include="game.h" />
-    <ClInclude Include="mainmenustate.h" />
     <ClInclude Include="person.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="position.h" />

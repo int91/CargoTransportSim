@@ -12,43 +12,114 @@ void DrawWheels(Vehicle& ve) //This will go in whatever class I decide to put it
         std::cout << (i + 1) << ".) " << "Wheel Name: " << a->at(i).GetName() << "\n";
         a->at(i).CalculateEfficiency();
     }
+    delete a;
 }
 
 Game::Game()
 {
-    this->_running = false;
-    this->_player = Player("INDEX", 0);
+    _sceneId = 0;
+    _running = false;
+    
+    Vehicle* truck = new Vehicle(Fueltank("FairRunner 20 Liter", 10, 190), "Truck", 10, 18, Wheel("10X FairRunner", 100, 20.1, 10, 100));
+    _player = new Player("INDEX", 0, truck);
 }
 
 Game::~Game()
 {
-
+    delete _player;
 }
 
 void Game::Start()
 {
-    this->_running = true;
+    _running = true;
 }
 
 void Game::Update()
 {
-    //Add GameLoop
-    while (this->_running)
+    while (_running)
     {
-        system("cls");
-        this->_gs->Update();
-        int input;
-        //Vehicle v = Vehicle(Fueltank("FairRunner 20 Liter", 10, 190), "Truck", 10, 18, Wheel("10X FairRunner", 100, 20.1, 10, 100));;
+        ClearScr();
+        UpdateScreen();
     }
-    system("cls");
+    ClearScr();
 }
 
 void Game::Dispose()
 {
-
 }
 
-void Game::SetState(BaseGameState* bgs) 
+void Game::UpdateScreen()
 {
-    this->_gs = bgs;
+    switch (_sceneId)
+    {
+    case 0:
+        MainMenu();
+        break;
+    case 1:
+        SetupNewGame();
+        break;
+    case 2:
+        BusinessScreen();
+        break;
+    }
+}
+
+void Game::MainMenu()
+{
+    std::cout << "Cargo Transport Simulator\n1.) New Game\n2.) Load Game\n3.) Quit Game\n->";
+    int input = GetInput();
+    if (input != NULL)
+    {
+        switch(input)
+        {
+        case 1:
+            _sceneId = 1;
+            break;
+        case 2:
+            //GO TO LOAD GAME
+            break;
+        case 3:
+            _running = false;
+            break;
+        }
+    }
+}
+
+void Game::SetupNewGame()
+{
+    std::cout << "What is your name?\n->";
+    std::string nme;
+    std::cin >> nme;
+    std::cout << "What is your business name?\n->";
+    std::string bnme;
+    std::cin >> bnme;
+    std::cout << nme << " - " << bnme << " are these names correct?\n1.) Yes\n2.) No\n->";
+    int input = GetInput();
+    if (input != NULL)
+    {
+        switch (input)
+        {
+        case 1:
+            _player->SetData(nme, bnme);
+            _sceneId = 2;
+            break;
+        }
+    }
+}
+
+void Game::BusinessScreen()
+{
+    std::cout << _player->GetBusinessName() << "'s Screen\nWelcome Back " << _player->GetName() << "\n";
+    std::cout << "1.) Browse Jobs\n2.) Browse Cargo Market\n";
+    std::cout << "->";
+    int input = GetInput();
+    if (input != NULL)
+    {
+        switch (input)
+        {
+        case 1:
+            
+            break;
+        }
+    }
 }

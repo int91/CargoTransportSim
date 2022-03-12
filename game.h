@@ -5,7 +5,6 @@
 #include "person.h"
 #include "player.h"
 #include "vehicle.h"
-#include "mainmenustate.h"
 class Game
 {
 public:
@@ -14,10 +13,13 @@ public:
 	void Start();
 	void Update();
 	void Dispose();
-	void SetState(BaseGameState* bgs);
-private:
-	BaseGameState* _gs;
-	bool _running;
-	Player _player;
 
+	void UpdateScreen();
+	void MainMenu();
+	void SetupNewGame();
+	void BusinessScreen();
+private:
+	int _sceneId;
+	bool _running;
+	Player* _player;
 };
