@@ -2,34 +2,37 @@
 
 Fueltank::Fueltank()
 {
-	this->fuel = 0;
-	this->maxFuel = 0;
+	this->_fuel = 0;
+	this->_maxFuel = 0;
 }
 
-Fueltank::Fueltank(std::string name, uint32_t val, double maxFuel) : VehiclePart(name, val)
+Fueltank::Fueltank(std::string name, double val, double mxFuel) : VehiclePart(name, val)
 {
-	this->fuel = maxFuel;
-	this->maxFuel = maxFuel;
+	this->_fuel = mxFuel;
+	this->_maxFuel = mxFuel;
+	this->_value = val;
 }
 
 void Fueltank::DrainTank(double amount)
 {
-	if (this->fuel - amount < 0) this->fuel -= 0; 
-	else this->fuel -= amount;
+	if (this->_fuel - amount < 0) this->_fuel -= 0; 
+	else this->_fuel -= amount;
 }
 
 double Fueltank::GetFuel()
 {
-	return this->fuel;
+	return this->_fuel;
 }
 
 double Fueltank::GetFuelLeft()
 {
-	return this->maxFuel - fuel;
+	return this->_maxFuel - _fuel;
 }
 
 void Fueltank::RefuelTank(double amount)
 {
-	if (this->fuel + amount > this->maxFuel) this->fuel = this->maxFuel;
-	else this->fuel += amount;
+	if (this->_fuel + amount > this->_maxFuel) this->_fuel = this->_maxFuel;
+	else this->_fuel += amount;
 }
+
+double Fueltank::GetFuelPercent() { return std::ceil((this->_fuel / this->_maxFuel) * 100.0); }

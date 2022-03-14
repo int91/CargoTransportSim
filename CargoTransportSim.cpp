@@ -11,11 +11,10 @@ void DebugClose()
 
 int main()
 {
-    Game* g = new Game();
-    g->Start();
-    g->Update();
-    g->Dispose();
-    delete g;
+    Game g = Game();
+    g.Start();
+    g.Update();
+    g.Dispose();
     if (DEBUGMODE) DebugClose();
     return 0;
 }

@@ -5,6 +5,7 @@
 #include "person.h"
 #include "player.h"
 #include "vehicle.h"
+#include "jobmarket.h"
 class Game
 {
 public:
@@ -18,8 +19,13 @@ public:
 	void MainMenu();
 	void SetupNewGame();
 	void BusinessScreen();
+	void AgencyJobsMarketScreen();
+	void DrivingScreen();
+	void DrivingRewardScreen();
+
 private:
 	int _sceneId;
 	bool _running;
-	Player* _player;
+	JobMarket _jobMarket;
+	Player _player;
 };

@@ -6,12 +6,14 @@
 class City
 {
 public:
-	City(std::string Name, std::vector<Building> Buildings); //Replace int with Building Class
+	City();
+	City(std::string Name, std::vector<Building> Buildings, Position pos); //Replace int with Building Class
 	std::string GetName();
 	void DrawBuildings();
 	Position GetPos();
 	//std::string GetState();
 private:
+	std::string _name;
 	std::vector<Building> _buildings; //Replace int with Building Class
 	Position _pos;
 };

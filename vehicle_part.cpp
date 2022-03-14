@@ -5,7 +5,7 @@ VehiclePart::VehiclePart()
 	this->_name = "NO NAME SET";
 }
 
-VehiclePart::VehiclePart(std::string name, uint32_t val)
+VehiclePart::VehiclePart(std::string name, double val)
 {
 	this->_name = name;
 	this->_value = val;
@@ -13,4 +13,4 @@ VehiclePart::VehiclePart(std::string name, uint32_t val)
 
 std::string VehiclePart::GetName() { return this->_name; }
 
-uint32_t VehiclePart::GetValue() { return this->_value; }
+double VehiclePart::GetValue() { return this->_value; }

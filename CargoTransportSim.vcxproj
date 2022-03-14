@@ -142,8 +142,10 @@
     <ClCompile Include="building.cpp" />
     <ClCompile Include="CargoTransportSim.cpp" />
     <ClCompile Include="city.cpp" />
+    <ClCompile Include="contract.cpp" />
     <ClCompile Include="fueltank.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="jobmarket.cpp" />
     <ClCompile Include="person.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="utils.cpp" />
@@ -154,8 +156,10 @@
   <ItemGroup>
     <ClInclude Include="building.h" />
     <ClInclude Include="city.h" />
+    <ClInclude Include="contract.h" />
     <ClInclude Include="fueltank.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="jobmarket.h" />
     <ClInclude Include="person.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="position.h" />

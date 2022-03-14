@@ -1,6 +1,6 @@
 #include "utils.h"
 
-
+//Implement Formula to loop through all locations in a general area and see if the player is at one.
 
 uint32_t GetDistance(uint32_t stX, uint32_t stY, uint32_t enX, uint32_t enY)
 {
@@ -16,6 +16,7 @@ int GetDistance(Position a, Position b)
 
 int GetInput()
 {
+    std::cout << "->";
     int input;
     std::cin >> input;
     if (std::cin.good())

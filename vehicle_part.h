@@ -5,11 +5,11 @@ class VehiclePart
 {
 public:
 	VehiclePart();
-	VehiclePart(std::string name, uint32_t val);
-	uint32_t GetValue();
+	VehiclePart(std::string name, double val);
+	double GetValue();
 	std::string GetName();
 private:
 	std::string _name;
 protected:
-	uint32_t _value;
+	double _value;
 };

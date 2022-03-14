@@ -6,12 +6,13 @@ class Fueltank : public VehiclePart
 {
 public:
 	Fueltank();
-	Fueltank(std::string name, uint32_t val, double maxFuel);
+	Fueltank(std::string name, double val, double maxFuel);
 	void RefuelTank(double amount);
 	void DrainTank(double amount);
 	double GetFuel();
 	double GetFuelLeft();
+	double GetFuelPercent();
 private:
-	double fuel;
-	double maxFuel;
+	double _fuel;
+	double _maxFuel;
 };

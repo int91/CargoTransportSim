@@ -27,4 +27,10 @@ struct Position
 		this->x /= a.x;
 		this->y /= a.y;
 	}
+
+	void Equ(const Position& a)
+	{
+		this->x = a.x;
+		this->y = a.y;
+	}
 };
