@@ -11,18 +11,23 @@ public:
 	Player();
 	Player(std::string nme, double mon);
 	~Player();
+
+	std::string GetBusinessName();
+
 	void StartContract(Contract* con);
 	void CompleteContract();
-	std::string GetBusinessName();
+	void SetData(std::string nme, std::string bnme);
+
 	Contract GetContract();
 	Position* GetPos();
-	void SetData(std::string nme, std::string bnme);
 	Vehicle* GetCurVehicle();
 private:
+	std::string _businessName;
+
 	uint32_t _exp;
 	uint32_t _expTo;
 	uint16_t _level;
-	std::string _businessName;
+	
 	Position _pos;
 	Vehicle _curVehicle;
 	Contract _con;

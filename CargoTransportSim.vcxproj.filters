@@ -13,87 +13,126 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Vehicle">
+      <UniqueIdentifier>{cb2e275b-118f-4ba6-bf17-6afb46a2d9c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{f975d2b1-53d8-4242-b3f7-68ece55d5467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Location">
+      <UniqueIdentifier>{bda2e360-888c-425d-9472-9ecc935126e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Market">
+      <UniqueIdentifier>{26b338f9-9526-4d90-b6c6-ae974e365b07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entity">
+      <UniqueIdentifier>{78890cc8-2b39-42ef-8746-eb6c0457c103}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{82ff5876-7f84-458a-84fd-719edb706e69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity">
+      <UniqueIdentifier>{163dce02-db35-45ad-9b39-14f1eb86e913}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Location">
+      <UniqueIdentifier>{d6dad803-d2ba-4b19-8440-43cc0d92910d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Market">
+      <UniqueIdentifier>{218f2895-4e5d-49fa-9cd9-0c7bbb6acffe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vehicle">
+      <UniqueIdentifier>{08d69702-eee5-4eee-a6d7-81e8d7ca02de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CargoTransportSim.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vehicle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fueltank.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vehicle_part.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="wheel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="person.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="game.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="CargoTransportSim.cpp">
+      <Filter>Source Files\Game</Filter>
     </ClCompile>
     <ClCompile Include="utils.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Game</Filter>
     </ClCompile>
     <ClCompile Include="player.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="city.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="person.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="building.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Location</Filter>
     </ClCompile>
-    <ClCompile Include="contract.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="city.cpp">
+      <Filter>Source Files\Location</Filter>
     </ClCompile>
     <ClCompile Include="jobmarket.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Market</Filter>
+    </ClCompile>
+    <ClCompile Include="contract.cpp">
+      <Filter>Source Files\Market</Filter>
+    </ClCompile>
+    <ClCompile Include="wheel.cpp">
+      <Filter>Source Files\Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="fueltank.cpp">
+      <Filter>Source Files\Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="vehicle.cpp">
+      <Filter>Source Files\Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="vehicle_part.cpp">
+      <Filter>Source Files\Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="crate.cpp">
+      <Filter>Source Files\Market</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vehicle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fueltank.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Vehicle</Filter>
     </ClInclude>
     <ClInclude Include="vehicle_part.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="fueltank.h">
+      <Filter>Header Files\Vehicle</Filter>
     </ClInclude>
     <ClInclude Include="wheel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="person.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="city.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Vehicle</Filter>
     </ClInclude>
     <ClInclude Include="game.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="building.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Location</Filter>
     </ClInclude>
-    <ClInclude Include="position.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="city.h">
+      <Filter>Header Files\Location</Filter>
     </ClInclude>
     <ClInclude Include="contract.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Market</Filter>
     </ClInclude>
     <ClInclude Include="jobmarket.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Market</Filter>
+    </ClInclude>
+    <ClInclude Include="person.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="position.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>Header Files\Market</Filter>
+    </ClInclude>
+    <ClInclude Include="crate.h">
+      <Filter>Header Files\Market</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

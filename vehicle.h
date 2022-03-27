@@ -14,10 +14,12 @@ private:
 public:
 	Vehicle();
 	Vehicle(Fueltank ft, std::string name, double val, int mxWheels, Wheel defWheel);
+	
 	Wheel GetWheel(int index);
 	void DrainFuel(double miles);
 	void MoveTowards(Building loc, double miles);
 	void SetPos(Position pos);
+
 	std::vector<Wheel> GetWheels();
 	std::string GetName();
 	Fueltank GetTank();

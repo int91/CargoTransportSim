@@ -1,4 +1,7 @@
 #pragma once
+#ifndef GAME_H
+#define GAME_H
+#endif
 #include <iostream>
 #include "utils.h"
 #include "city.h"
@@ -6,11 +9,13 @@
 #include "player.h"
 #include "vehicle.h"
 #include "jobmarket.h"
+
 class Game
 {
 public:
 	Game();
 	~Game();
+
 	void Start();
 	void Update();
 	void Dispose();

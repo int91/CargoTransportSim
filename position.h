@@ -4,6 +4,12 @@ struct Position
 	int x;
 	int y;
 
+	int operator+(const Position& a)
+	{
+		x += a.x;
+		y += a.y;
+	}
+
 	void Add(const Position& a)
 	{
 		this->x += a.x;

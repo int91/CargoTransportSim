@@ -55,7 +55,7 @@ void Game::UpdateScreen()
         break;
     case 7:
         DrivingRewardScreen();
-            break;
+        break;
     }
 }
 
@@ -85,10 +85,13 @@ void Game::SetupNewGame()
     std::cout << "What is your name?\n->";
     std::string nme;
     std::cin >> nme;
+
     std::cout << "What is your business name?\n->";
     std::string bnme;
     std::cin >> bnme;
+
     std::cout << nme << " - " << bnme << " are these names correct?\n1.) Yes\n2.) No\n";
+
     int input = GetInput();
     if (input != NULL)
     {
@@ -106,6 +109,7 @@ void Game::BusinessScreen()
 {
     std::cout << _player.GetBusinessName() << "'s Screen\nWelcome Back " << _player.GetName() << "\n";
     std::cout << "1.) Browse Jobs\n2.) Browse Cargo Market\n10.) Main Menu\n";
+
     int input = GetInput();
     if (input != NULL)
     {
@@ -127,27 +131,45 @@ void Game::AgencyJobsMarketScreen()
 {
     std::cout << "Available Jobs\n"; //Have this print out available jobs (Use my custom inv list system
     //Create a job market class where the player can pick out jobs and eventually post job listings.
-    std::vector<Contract> cons = *_jobMarket.GetContracts();
-    for (size_t i = 0; i < cons.size(); i++)
+    size_t page = _jobMarket.GetPage();
+    //cons.size()
+    for (size_t i = page; i < ((page+1)*10); i++)
     {
-        std::cout << i+1 << ".) " << cons[i].GetName() << "\n";
+        Contract* c = _jobMarket.GetContractAt(i);
+        if (c != NULL)
+        {
+            std::cout << i + 1 << ".) " << c->GetName() << "\n";
+        }
     }
     std::cout << "20.) Go Back\n";
     int input = GetInput();
     if (input != NULL)
     {
+        if (input == 20)
+        {
+            _jobMarket.PageUp();
+        }
+        else if (input == 21)
+        {
+            _jobMarket.PageDown();
+        }
+
         input--;
-        if (input >= _jobMarket.GetPage() && input <= (_jobMarket.GetPage() + 1))
+        if (input >= page && input <= 9)
         {
             size_t index = (size_t)input;
-            Contract* c =  _jobMarket.GetContractAt(index);
-            std::cout << "\nTo: " << c->GetStartLocation()->GetName() << "\nFrom: " << c->GetEndLocation()->GetName() << "\nTotal Distance: " << c->GetTotalDistance() << "\n--------------------------------------------\n";
-            std::cout << "1.) Start Job\n";
-            int in = GetInput();
-            if (in == 1)
+            Contract* c =  _jobMarket.GetContractAt((page*10) + index);
+            if (c != NULL)
             {
-                _player.StartContract(c);
-                _sceneId = 4;
+                //Put below menu into a new method
+                std::cout << "\nTo: " << c->GetStartLocation()->GetName() << "\nFrom: " << c->GetEndLocation()->GetName() << "\nTotal Distance: " << c->GetTotalDistance() << "\n--------------------------------------------\n";
+                std::cout << "1.) Start Job\n";
+                int in = GetInput();
+                if (in == 1)
+                {
+                    _player.StartContract(c);
+                    _sceneId = 4;
+                }
             }
         }
     }
@@ -160,11 +182,15 @@ void Game::DrivingScreen()
     Position* pPos = _player.GetPos();
     Contract c = _player.GetContract();
     Vehicle* vh = _player.GetCurVehicle();
+
     bool atDest = c.AtDestination(*pPos);
     int TotalDist = (c.GetEndLocation()->GetPos().x - pPos->x) + (c.GetEndLocation()->GetPos().y - pPos->y);
 
     std::cout << "Driving\n-----------------------------------------------\n";
-    if (c.GetName() != "NoName") std::cout << "Contract: " << c.GetName() << "\n";
+    if (c.GetName() != "NoName")
+    {
+        std::cout << "Contract: " << c.GetName() << "\n";
+    }
     std::cout << "Current Location: " << "\n";
     std::cout << "GPS Location:  X:" << pPos->x << "  Y: " << pPos->y << "\n";
     std::cout << "Miles To Destination: " << TotalDist << "\n"; //Implement this
@@ -173,7 +199,7 @@ void Game::DrivingScreen()
     std::cout << "1.) Drive\n2.) Check Laptop\n"; //Check laptop is for if you own one
     if (atDest)
     {
-        std::cout << "3.) Try To Park Trailer\n4.) Have Company Park Trailer\n";
+        std::cout << "3.) Try To Park Trailer\n4.) Skip Trailer Parking\n";
     }
 
     //Display driving options
@@ -183,8 +209,13 @@ void Game::DrivingScreen()
         switch (input)
         {
         case 1:
-            vh->MoveTowards(*c.GetEndLocation(), 50);
-            pPos->Equ(vh->GetPos());
+            if (!atDest)
+            {
+                vh->MoveTowards(*c.GetEndLocation(), 50); //TODO: Set 50 to nearest landmark / location that is on the way to the destination
+                pPos->Equ(vh->GetPos());
+            }
+            break;
+        case 2:
             break;
         case 3:
             if (atDest)
@@ -209,10 +240,15 @@ void Game::DrivingRewardScreen()
     {
         _player.CompleteContract();
         std::cout << "Contract Complete!\n";
+    } else 
+    {
+        std::cout << "Drive Complete\n";
     }
-
     
 
     int input = GetInput();
-    
+    if (input != NULL)
+    {
+        _sceneId = 2;
+    }
 }
