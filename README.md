@@ -1,5 +1,5 @@
 # SIDENOTE
-This project is currently being re-designed in [Go]("https://go.dev")
+This project is currently being re-designed in [Go](https://go.dev)
 
 # Cargo Transport Sim
 Cargo Transport Simulator is a game in which you run your own Cargo Logistics company. Start out as a simple lonewolf business owner and work your way up to compete with the best in the logistics industry.
