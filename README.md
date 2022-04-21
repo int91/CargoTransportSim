@@ -1,4 +1,4 @@
-#SIDENOTE
+# SIDENOTE
 This project is currently being re-designed in [Go]("https://go.dev")
 
 # Cargo Transport Sim
